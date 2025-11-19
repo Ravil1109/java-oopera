@@ -1,12 +1,14 @@
 package ru.yandex.practicum.opera.staff;
 
-public class Employee {
-    private String name;
-    private String surname;
-    private Gender gender;
+public class Person {
+    private String name; //Имя
+    private String surname; //Фамилия
+    private Gender gender; //Пол
 
-    public Employee() {
-
+    public Person(String name, String surname, Gender gender) {
+        this.name = name;
+        this.surname = surname;
+        this.gender = gender;
     }
 
     public String getName() {
@@ -33,5 +35,11 @@ public class Employee {
         this.gender = gender;
     }
 
-
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
+    }
 }
