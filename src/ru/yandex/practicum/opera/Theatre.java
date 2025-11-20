@@ -25,26 +25,26 @@ public class Theatre {
         Person musicAuthor = new Person("Морозова", "Елизавета", Gender.FEMALE);
 
         //Хареограф
-        Person choreographer = new Person ("Варвара", "Егорова ", Gender.FEMALE);
+        Person choreographer = new Person("Варвара", "Егорова ", Gender.FEMALE);
 
         /*2. Создать три спектакля: обычный, оперный и балет
           3. Распределить актёров по спектаклям. Используйте для этого метод
              добавления нового актёра в спектакль. Один актёр может участвовать
              в нескольких спектаклях.*/
         //Спектакль обычный
-        Show show = new Show("Скамья забредших душ", 160, director1, null);
+        Show show = new Show("Скамья забредших душ", 160, director1);
         show.addActorToList(actor1);
         show.addActorToList(actor2);
 
         //Спектакль оперный
-        Opera opera = new Opera("Новогодний подарок судьбы", 96, director2, null,
-                                musicAuthor,"Много слов 1 ........");
+        Opera opera = new Opera("Новогодний подарок судьбы", 96, director2,
+                musicAuthor, "Много слов 1 ........");
         opera.addActorToList(actor2);
         opera.addActorToList(actor3);
 
         //Спектакль балет
-        Ballet ballet = new Ballet("Скамья забредших душ", 80, director2, null,
-                                   musicAuthor, "Много слов 2 ........", choreographer);
+        Ballet ballet = new Ballet("Скамья забредших душ 2", 80, director2,
+                musicAuthor, "Много слов 2 ........", choreographer);
         ballet.addActorToList(actor1);
         ballet.addActorToList(actor2);
         ballet.addActorToList(actor3);
@@ -58,11 +58,11 @@ public class Theatre {
         printActorsInListShows();
 
         //5. Замените актёра в одном из спектаклей на актёра из другого спектакля и ещё раз выведите для него список актёров.
-        opera.replaceActor(actor1,"Люмьер");
+        opera.replaceActor(actor1, "Люмьер");
         opera.printActors();
 
         //6.Попробуйте заменить в другом спектакле несуществующего актёра
-        show.replaceActor(actor3,"Тихомиров");
+        show.replaceActor(actor3, "Тихомиров");
         show.printActors();
 
         //7.Для оперного и балетного спектакля выведите на экран текст либретто.
@@ -72,7 +72,7 @@ public class Theatre {
 
     //Печать актеров по всем спектаклям
     public static void printActorsInListShows() {
-        for (Show show: listOfShows) {
+        for (Show show : listOfShows) {
             show.printActors();
         }
     }

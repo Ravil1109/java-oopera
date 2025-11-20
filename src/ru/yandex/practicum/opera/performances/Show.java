@@ -6,24 +6,19 @@ import ru.yandex.practicum.opera.staff.Director;
 import java.util.ArrayList;
 
 public class Show {
-    private String title; //Название
-    private int duration; //Длительность в минутах
-    private Director director; //Режиссёр
-    private ArrayList<Actor> listOfActors; //Список актёров
+    protected String title; //Название
+    protected int duration; //Длительность в минутах
+    protected Director director; //Режиссёр
+    protected ArrayList<Actor> listOfActors = new ArrayList<>(); //Список актёров
 
-    public Show(String title, int duration, Director director, ArrayList<Actor> listOfActors) {
+    public Show(String title, int duration, Director director) {
         this.title = title;
         this.duration = duration;
         this.director = director;
-        if (listOfActors == null) {
-            this.listOfActors = new ArrayList<>();
-        } else {
-            this.listOfActors = listOfActors;
-        }
     }
 
     public void printDirector() {
-        System.out.println(director.toString());
+        System.out.println(director);
 
     }
 
@@ -39,14 +34,12 @@ public class Show {
     }
 
     //Замена Актера
-    public void replaceActor (Actor newActor, String replaceActorSurname) {
-        if (newActor == null ||
-            replaceActorSurname == null ||
-            "".equals(replaceActorSurname)) {
+    public void replaceActor(Actor newActor, String replaceActorSurname) {
+        if (newActor == null || replaceActorSurname == null || "".equals(replaceActorSurname)) {
             return;
         }
 
-        for (Actor actor: listOfActors) {
+        for (Actor actor : listOfActors) {
             if (replaceActorSurname.equalsIgnoreCase(actor.getSurname())) {
                 listOfActors.remove(actor);
                 addActorToList(newActor);
@@ -54,14 +47,13 @@ public class Show {
             }
         }
 
-        System.out.println("Актер с фамилией '"+replaceActorSurname+"' отсутствует!");
-        System.out.println("");
+        System.out.println("Актер с фамилией '" + replaceActorSurname + "' отсутствует!\n");
     }
 
     public void printActors() {
-        System.out.println("Актеры к спектаклю '"+getTitle()+"':");
-        for (Actor actor: listOfActors) {
-            System.out.println(actor.toString());
+        System.out.println("Актеры к спектаклю '" + title + "':");
+        for (Actor actor : listOfActors) {
+            System.out.println(actor);
         }
         System.out.println("");
     }

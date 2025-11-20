@@ -27,9 +27,7 @@ public class Actor extends Person {
         if (this.getClass() != obj.getClass()) return false;
 
         Actor actor = (Actor) obj;
-        return height == actor.height &&
-                Objects.equals(getName(),actor.getName()) &&
-                Objects.equals(getSurname(),actor.getSurname());
+        return height == actor.height && Objects.equals(getName(), actor.getName()) && Objects.equals(getSurname(), actor.getSurname());
     }
 
     @Override
@@ -52,10 +50,6 @@ public class Actor extends Person {
 
     @Override
     public String toString() {
-        return "Actor{" +
-                "name='" + super.getName() + '\'' +
-                ", surname='" + super.getSurname() + '\'' +
-                ", height=" + height +
-                '}';
+        return "Actor{" + "name='" + super.getName() + '\'' + ", surname='" + super.getSurname() + '\'' + ", height=" + height + '}';
     }
 }
