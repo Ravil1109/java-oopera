@@ -33,21 +33,37 @@ public class Show {
         }
     }
 
+
     //Замена Актера
     public void replaceActor(Actor newActor, String replaceActorSurname) {
         if (newActor == null || replaceActorSurname == null || "".equals(replaceActorSurname)) {
             return;
         }
 
-        for (Actor actor : listOfActors) {
+        //Поиск однофамильцев
+        int cnt = 0;
+        int inx = -1;
+        for (int i = 0; i < listOfActors.size(); i++) {
+            Actor actor = listOfActors.get(i);
+
             if (replaceActorSurname.equalsIgnoreCase(actor.getSurname())) {
-                listOfActors.remove(actor);
-                addActorToList(newActor);
-                return;
+                if (cnt == 0) {
+                    inx = i;
+                }
+
+                cnt++;
             }
         }
 
-        System.out.println("Актер с фамилией '" + replaceActorSurname + "' отсутствует!\n");
+        if (cnt == 0) {
+            System.out.println("Актер с фамилией '" + replaceActorSurname + "' отсутствует!\n");
+        } else if (cnt > 1) {
+            System.out.println("Найдено несколько однофамильцев " + replaceActorSurname + "! Невозможно однозначно определить заменяемого актера!\n");
+        } else {
+            listOfActors.remove(inx);
+            addActorToList(newActor);
+        }
+
     }
 
     public void printActors() {
