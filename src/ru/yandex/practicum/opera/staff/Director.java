@@ -2,7 +2,7 @@ package ru.yandex.practicum.opera.staff;
 
 public class Director extends Person {
 
-    private int numberOfShows;
+    protected int numberOfShows;
 
     public Director(String name, String surname, Gender gender, int numberOfShows) {
         super(name, surname, gender);

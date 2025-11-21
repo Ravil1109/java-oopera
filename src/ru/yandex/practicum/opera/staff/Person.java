@@ -1,9 +1,9 @@
 package ru.yandex.practicum.opera.staff;
 
 public class Person {
-    private String name; //Имя
-    private String surname; //Фамилия
-    private Gender gender; //Пол
+    protected String name; //Имя
+    protected String surname; //Фамилия
+    protected Gender gender; //Пол
 
     public Person(String name, String surname, Gender gender) {
         this.name = name;

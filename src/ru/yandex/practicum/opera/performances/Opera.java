@@ -4,10 +4,8 @@ import ru.yandex.practicum.opera.staff.Actor;
 import ru.yandex.practicum.opera.staff.Director;
 import ru.yandex.practicum.opera.staff.Person;
 
-import java.util.ArrayList;
-
 public class Opera extends MusicalShow {
-    private int choirSize;
+    protected int choirSize;
 
     public Opera(String title, int duration, Director director, Person musicAuthor, String librettoText) {
         super(title, duration, director, musicAuthor, librettoText);
