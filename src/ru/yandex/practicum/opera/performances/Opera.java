@@ -5,7 +5,7 @@ import ru.yandex.practicum.opera.staff.Director;
 import ru.yandex.practicum.opera.staff.Person;
 
 public class Opera extends MusicalShow {
-    protected int choirSize;
+    private int choirSize;
 
     public Opera(String title, int duration, Director director, Person musicAuthor, String librettoText) {
         super(title, duration, director, musicAuthor, librettoText);

@@ -4,7 +4,7 @@ import ru.yandex.practicum.opera.staff.Director;
 import ru.yandex.practicum.opera.staff.Person;
 
 public class Ballet extends MusicalShow {
-    protected Person choreographer;
+    private Person choreographer;
 
     public Ballet(String title, int duration, Director director, Person musicAuthor, String librettoText, Person choreographer) {
         super(title, duration, director, musicAuthor, librettoText);
